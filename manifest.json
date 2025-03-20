@@ -1,0 +1,24 @@
+{
+  "name": "MMSD Chatbot Assistant",
+  "short_name": "MMSD Assistant",
+  "description": "A chatbot assistant for Madison Metropolitan School District",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#057fa9",
+  "icons": [
+    {
+      "src": "icons/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "orientation": "portrait"
+}
