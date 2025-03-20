@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#057fa9">
+  <title>MMSD Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon192.png">
+  <script src="marked.min.js"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="district-logo">
+        <img id="district-logo" src="icons/icon128.png" alt="MMSD Logo" height="40">
+      </div>
+      <h2>MMSD Assistant</h2>
+    </div>
+    
+    <!-- Messages Container -->
+    <div id="messages-container" class="messages-container">
+      <!-- Messages will be inserted here dynamically -->
+    </div>
+    
+    <!-- Typing Indicator will show up here when needed -->
+    <div id="typing-indicator" class="typing-indicator hidden">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    
+    <!-- Input Area -->
+    <div class="input-container">
+      <form id="chat-form">
+        <div class="message-input-container">
+          <input 
+            type="text" 
+            id="message-input" 
+            class="message-input" 
+            placeholder="Type your message..." 
+            autocomplete="off"
+          >
+          <button type="submit" class="send-button">
+            <span class="send-icon"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="chatbotService.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Register service worker for PWA functionality
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
